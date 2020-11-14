@@ -18,9 +18,11 @@ app.listen(port, function () {
 });
 
 app.use(session({
-    secret: process.env.SECRET, // stores our secret in our .env file
+    //secret: process.env.SECRET, // stores our secret in our .env file
+    secret: "not so secret", //Used for in lab only
     resave: false,              // other config settings explained in the docs
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: { path: '/', httpOnly: true, maxAge: 36000000 }
 }));
 
 app.use(bodyParser.urlencoded({ extended: true }));
