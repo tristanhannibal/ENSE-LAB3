@@ -1,0 +1,31 @@
+<% if (task.cleared == false ) { %>
+<div class="input-group mb-3 bg-light">
+    <form class="input-group bg-light" method="POST"
+        action=" <% if (task.done){ %>/unfinish<%}else{%>/abandonorcomplete<% } %>">
+        <input type="hidden" name="email" value="<%if (task.owner) __append(task.owner.username) %>">
+        <input type="hidden" name="currentUser" value="<%=email%>">
+        <input type="hidden" name="postID" value="<%=task.id%>">
+        <div class="input-group-prepend">
+            <% if(task.owner){
+                if (email == task.owner.username) { %>
+            <span class="input-group-text"><input onChange="this.form.submit()" formaction="/abandonorcomplete"
+                    type="checkbox" <% if(task.done) {%> checked <% }%>></span>
+            <% }} %>
+        </div>
+        <label class=" flex-fill ml-1 p-1 <% if(task.done){%> line-through  <% } %> "><%=task.name%>
+        </label>
+        <div class="input-group-append">
+            <%  if(task.owner)
+            {
+                if (email == task.owner.username && task.done == false) { %>
+            <button name="abandon" formaction="/abandonorcomplete" value="abandon" type="submit"
+                class="btn btn-outline-danger">Abandon</button>
+            <% }}  if ((!task.owner) && (!task.cleared)) {  %>
+            <button name="abandon" formaction='/claim' value="claim" type="submit"
+                class="btn btn-outline-primary">Claim</button>
+            <% }
+             %>
+        </div>
+    </form>
+</div>
+<% } %>

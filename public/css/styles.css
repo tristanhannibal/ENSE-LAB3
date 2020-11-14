@@ -1,0 +1,26 @@
+.card-header{
+    background: rgb(186,227,244);
+    background: linear-gradient(90deg, rgba(186,227,244,1) 28%, rgba(191,255,193,1) 88%);
+}
+
+
+
+  .display-4{
+        color: black;
+
+  }
+
+  #todo-container{
+      background: rgb(242, 246, 246);
+      border-radius: 5px;
+      border: solid grey 1px;
+  }
+
+  .input-group-text{
+      background:#f8f9fa ;
+
+  }
+
+  .line-through{
+    text-decoration: line-through;
+  }

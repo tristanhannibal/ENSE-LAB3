@@ -1,0 +1,53 @@
+{
+    "Users": [
+        {
+            "username": "user1@a.com",
+            "password": "password1"
+        },
+        {
+            "username": "user2@b.com",
+            "password": "password2"
+        }
+    ],
+    "Tasks": [
+        {
+            "id": 1,
+            "name": "claimed by user1 and unfinished",
+            "owner": "user1@a.com",
+            "creator": "user1",
+            "done": false,
+            "cleared": false
+        },
+        {
+            "id": 2,
+            "name": "claimed by user2 and unfinished",
+            "owner": "user2@b.com",
+            "creator": "user1@a.com",
+            "done": false,
+            "cleared": false
+        },
+        {
+            "id": 3,
+            "name": "claimed by user1 and finished",
+            "owner": "user1@a.com",
+            "creator": "user2@b.com",
+            "done": true,
+            "cleared": false
+        },
+        {
+            "id": 4,
+            "name": "claimed by user2 and finished",
+            "owner": "user2@b.com",
+            "creator": "user2@b.com",
+            "done": true,
+            "cleared": false
+        },
+        {
+            "id": 5,
+            "name": "unclaimed",
+            "creator": "user2@b.com",
+            "done": false,
+            "cleared": false
+        }
+    ]
+}
