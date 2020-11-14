@@ -64,7 +64,6 @@ const Tasks = new mongoose.model("Task", taskSchema);
 
 
 
-const AUTH_VALUE = '123'; // Auth code for signup
 
 app.get('/', function (req, res) {
     if (req.user) {
@@ -76,6 +75,7 @@ app.get('/', function (req, res) {
 
 
 
+const AUTH_VALUE = '123'; // Auth code for signup
 //only registers if email doesn't already exist, and auth code is correct
 app.post('/register', function (req, res) {
     let auth = req.body.authentication;
